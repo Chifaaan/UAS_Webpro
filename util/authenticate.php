@@ -4,10 +4,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST["password"];
 
   if ($username === "admin") {
-    header("Location: labo.html");
+    header("Location: ../page/dashboard.php");
     exit();
   } else {
-    header("Location: labo.html");
+    header("Location: ../page/dashboard.php");
     exit();
   }
 }

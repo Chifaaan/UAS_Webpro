@@ -6,28 +6,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>StudentPortal TIK</title>
+  <title>SiJaFas TIK PNJ | Login</title>
 </head>
 
 <body class="bg-sky-100">
-  <header class="sticky bg-slate-100 py-5 font-bold shadow-blake shadow-2xl">
+  <header class="sticky bg-slate-100 py-2 font-bold shadow-blake shadow-2xl">
     <nav class="flex flex-row mx-auto w-9/12 px-2">
       <div class="basis-1/2 uppercase text-md items-center">
         <a href="">
-          <span>Sistem Pengecekan Ruangan (SIPERANG) TIK</span> <br />
+          <span>Sistem Informasi Peninjau Ruang Kelas TIK</span> <br />
           <span>Politeknik Negeri Jakarta</span>
         </a>
-      </div>
-      <div class="basis-1/2 text-end my-auto inline-block items-center p-2">
-        <a href="" class="flex justify-end transition-all duration-300 ease-in-out hover:text-yellow-500">
-          <span class="mx-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-              class="bi bi-person-lines-fill" viewBox="0 0 16 16">
-              <path
-                d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
-            </svg></span>
-
-          <span class="text-md">Bantuan Admin </span></a>
       </div>
     </nav>
   </header>
@@ -49,7 +38,8 @@
         </div>
       </div>
     </div>
-    <form action="" method="post">
+
+    <form action="../util/authenticate.php" method="post">
       <div class="flex flex-row p-4">
         <div class="w-9/12 mx-auto">
           <div class="px-4">
@@ -69,7 +59,7 @@
                       class="border border-gray-300 rounded-md p-2 hover:border-sky-700" />
                     <button class="bg-gray-200 rounded-md p-2 hover:bg-gray-500 transition-all duration-100 ease-in-out"
                       type="submit" name="submit" id="submit">
-                      LOGIN !
+                      LOGIN
                     </button>
                   </div>
                 </div>

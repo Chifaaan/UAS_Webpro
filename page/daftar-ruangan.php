@@ -1,3 +1,7 @@
+<?php 
+  $username = "Mahasiswa";
+?>
+
 <html>
 
 <head>
@@ -49,34 +53,30 @@
         </div>
       </div>
     </div>
+    
     <div class="flex flex-row p-4 mx-auto">
       <div class="basis-1/4 rounded-md transition-all duration-300 ease-in-out shadow-black shadow-sm bg-white">
         <ul class="indent-7 text-sky-600 leading-9 p-2 mx-auto">
-          <a href="">
+          <a href="dashboard.php">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
-              🏛️ fasilitas kelas
+              🏦 Dashboard
             </li>
           </a>
-          <a href="">
-            <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
-              🏫 fasilitas ruangan
-            </li>
-          </a>
-          <a href="login.php">
+          <a href="../index.php">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
               📴 Logout
             </li>
           </a>
         </ul>
       </div>
+
       <div class="basis-3/4">
         <div class="px-4">
           <div
             class="rounded-md mb-2 shadow-slate-400 shadow-lg  h-max relative bg-white p-4 text-center text-lg font-bold">
             Fasilitas kelas Jurusan Teknik Informatika dan Komputer <br>
             <div class="text-sm font-normal">
-              berikut ini adalah list kelas yang digunakan oleh mahasiswa TIK. klik tombol detil untuk informasi lebih
-              lanjut
+              berikut ini adalah list kelas yang digunakan oleh mahasiswa TIK. klik tombol detil untuk informasi lebih lanjut
             </div>
           </div>
 
@@ -92,81 +92,30 @@
               <tr>
                 <td class="border-2 border-b-black p-2">GSG 202</td>
                 <td class="border-2 border-b-black p-2">Kelas Audio Visual</td>
-                <td class="border-2 border-b-black p-2">lantai 2,Gedung F (GSG)</td>
+                <td class="border-2 border-b-black p-2">lantai 2, Gedung F (GSG)</td>
                 <td class="p-4 border-2 border-b-black p-2">
-                  <a href="detail.php"
-                    class="text-black-200 bg-sky-200 py-1 px-2 hover:underline rounded-md ">Detail</a>
+                <a href="../util/detail.php?class=GSG%20202"
+                    class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
                 </td>
-
+                </td>
               </tr>
 
               <tr>
                 <td class="border-2 border-b-black p-2">GSG 211</td>
                 <td class="border-2 border-b-black p-2">Kelas Reguler</td>
-                <td class="border-2 border-b-black p-2">lantai 2,Gedung F (GSG)</td>
+                <td class="border-2 border-b-black p-2">lantai 2, Gedung F (GSG)</td>
                 <td class="p-4 border-2 border-b-black p-2">
-                  <a href="detail.php"
-                    class="text-black-200 bg-sky-200 py-1 px-2 hover:underline rounded-md ">Detail</a>
+                  <a href="../util/detail.php?class=GSG%20211"
+                    class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
                 </td>
-
               </tr>
-
-
-
             </table>
+
           </div>
-
-
-
-
-
-
-
-
-          <!-- <div
-              class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4 justify-center"
-            >
-              <form
-                action="upload.php"
-                method="post"
-                enctype="multipart/form-data"
-                class="flex flex-col items-center justify-center p-4"
-              >
-                <label for="file" class="text-lg font-bold mb-4"
-                  >Pilih File untuk Diupload</label
-                >
-
-                <div class="flex flex-col items-center justify-center w-full">
-                  <input
-                    type="file"
-                    id="file"
-                    name="file"
-                    class="hidden h-20 border-2"
-                  />
-                  <div class="flex space-x-2">
-                    <button
-                      onclick="document.getElementById('file').click()"
-                      type="button"
-                      class="bg-blue-500 text-white py-2 px-4 rounded-md"
-                    >
-                      Pilih File
-                    </button>
-                    <button
-                      type="submit"
-                      class="bg-green-500 text-white py-2 px-4 rounded-md"
-                    >
-                      Upload
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div> -->
         </div>
       </div>
     </div>
   </main>
-
-  <footer></footer>
 </body>
 
 </html>
