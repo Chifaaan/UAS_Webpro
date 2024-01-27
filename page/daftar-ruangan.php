@@ -82,7 +82,7 @@ $conn->close();
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
             <table class="w-full text-center">
               <tr>
-                <th class="border-2 border-b-black w-1/4 p-2">Nama Ruangan</th>
+                <th class="border-2 border-b-black w-1/4 p-2">Nama ruangan</th>
                 <th class="border-2 border-b-black w-2/4 p-2">Jenis ruangan</th>
                 <th class="border-2 border-b-black W-1/4 p-2">Lokasi</th>
                 <th class="border-2 border-b-black W-1/4 p-2">Aksi</th>
