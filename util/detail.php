@@ -70,7 +70,7 @@
             </tr>
             <tr>
               <td class="border-2  p-2">jenis Ruangan</td>
-              <td class="border-2  p-2"><?php echo $row["jenis"]?></td>
+              <td class="border-2  p-2"><?php echo $row["jenis_ruangan"]?></td>
             </tr>
             <tr>
               <td class="border-2  p-2">lokasi Ruangan</td>
