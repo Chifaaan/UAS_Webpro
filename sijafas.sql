@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jan 2024 pada 08.29
+-- Waktu pembuatan: 27 Jan 2024 pada 08.56
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -33,6 +33,8 @@ CREATE TABLE `jadwal` (
   `NIP` varchar(50) NOT NULL,
   `hari` varchar(10) NOT NULL,
   `tanggal` date NOT NULL,
+  `jam_mulai` time NOT NULL,
+  `jam_akhir` time NOT NULL,
   `nama_peminjam` varchar(100) NOT NULL,
   `status` varchar(50) NOT NULL,
   `keterangan` varchar(255) NOT NULL
