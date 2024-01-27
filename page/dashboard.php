@@ -82,7 +82,7 @@
 
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
             <table class="w-full text-center">
-              <tr>
+              <!-- <tr>
                 <th class="border-2 border-b-black w-1/4 p-2">Kode ruangan</th>
                 <th class="border-2 border-b-black w-2/4 p-2">Nama ruangan</th>
                 <th class="border-2 border-b-black W-1/4 p-2">Lokasi</th>
@@ -108,7 +108,7 @@
                   <a href="../util/detail.php?class=GSG211"
                     class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
                 </td>
-              </tr>
+              </tr> -->
             </table>
 
           </div>

@@ -94,7 +94,7 @@
                 <td class="border-2 border-b-black p-2">Kelas Audio Visual</td>
                 <td class="border-2 border-b-black p-2">lantai 2, Gedung F (GSG)</td>
                 <td class="p-4 border-2 border-b-black p-2">
-                <a href="../util/detail.php?class=GSG202"
+                <a href="../util/detail.php?class=GSG%20202"
                     class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
                 </td>
                 </td>
@@ -105,7 +105,7 @@
                 <td class="border-2 border-b-black p-2">Kelas Reguler</td>
                 <td class="border-2 border-b-black p-2">lantai 2, Gedung F (GSG)</td>
                 <td class="p-4 border-2 border-b-black p-2">
-                  <a href="../util/detail.php?class=GSG211"
+                  <a href="../util/detail.php?class=GSG%20211"
                     class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
                 </td>
               </tr>
