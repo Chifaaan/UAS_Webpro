@@ -56,7 +56,7 @@ CREATE TABLE `jadwal` (
 --
 
 CREATE TABLE `mata_kuliah` (
-  `id_matkul` varchar(6) NOT NULL,
+  `id_matkul` varchar(15) NOT NULL,
   `nama_matkul` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
