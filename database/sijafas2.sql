@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `dosen` (
-  `NIP` varchar(15) NOT NULL,
+  `NIP` varchar(25) NOT NULL,
   `nama_dosen` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
