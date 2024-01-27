@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jan 2024 pada 17.02
+-- Waktu pembuatan: 27 Jan 2024 pada 17.25
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -68,7 +68,7 @@ CREATE TABLE `mata_kuliah` (
 
 CREATE TABLE `ruangan` (
   `id_ruangan` varchar(10) NOT NULL,
-  `Lokasi` varchar(25) NOT NULL,
+  `lokasi` varchar(25) NOT NULL,
   `fasilitas` varchar(255) NOT NULL,
   `jenis_ruangan` varchar(35) NOT NULL,
   `kapasitas` int(4) NOT NULL
@@ -85,6 +85,14 @@ ALTER TABLE `dosen`
   ADD PRIMARY KEY (`NIP`);
 
 --
+-- Indeks untuk tabel `jadwal`
+--
+ALTER TABLE `jadwal`
+  ADD KEY `id_ruangan` (`id_ruangan`),
+  ADD KEY `id_matkul` (`id_matkul`),
+  ADD KEY `NIP` (`NIP`);
+
+--
 -- Indeks untuk tabel `mata_kuliah`
 --
 ALTER TABLE `mata_kuliah`
@@ -95,6 +103,18 @@ ALTER TABLE `mata_kuliah`
 --
 ALTER TABLE `ruangan`
   ADD PRIMARY KEY (`id_ruangan`);
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `jadwal`
+--
+ALTER TABLE `jadwal`
+  ADD CONSTRAINT `jadwal_ibfk_1` FOREIGN KEY (`id_ruangan`) REFERENCES `ruangan` (`id_ruangan`),
+  ADD CONSTRAINT `jadwal_ibfk_2` FOREIGN KEY (`id_matkul`) REFERENCES `mata_kuliah` (`id_matkul`),
+  ADD CONSTRAINT `jadwal_ibfk_3` FOREIGN KEY (`NIP`) REFERENCES `dosen` (`NIP`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
