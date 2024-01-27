@@ -82,8 +82,8 @@ $conn->close();
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
             <table class="w-full text-center">
               <tr>
-                <th class="border-2 border-b-black w-1/4 p-2">Kode ruangan</th>
-                <th class="border-2 border-b-black w-2/4 p-2">Nama ruangan</th>
+                <th class="border-2 border-b-black w-1/4 p-2">Nama Ruangan</th>
+                <th class="border-2 border-b-black w-2/4 p-2">Jenis ruangan</th>
                 <th class="border-2 border-b-black W-1/4 p-2">Lokasi</th>
                 <th class="border-2 border-b-black W-1/4 p-2">Aksi</th>
               </tr>
@@ -95,7 +95,7 @@ $conn->close();
                   <tr>
                     <td class="border-2 border-b-black p-2"><?= $row['id_ruangan']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $row['jenis_ruangan']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $row['id_ruangan']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $row['lokasi']; ?></td>
                     <td class="p-4 border-2 border-b-black p-2">
                       <a href="../util/detail.php?class=<?php echo $row['id_ruangan']?>" class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
                     </td>
