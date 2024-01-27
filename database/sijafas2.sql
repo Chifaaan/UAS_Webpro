@@ -67,11 +67,11 @@ CREATE TABLE `mata_kuliah` (
 --
 
 CREATE TABLE `ruangan` (
-  `id_ruangan` varchar(10) NOT NULL,
-  `lokasi` varchar(25) NOT NULL,
+  `id_ruangan` varchar(25) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
   `fasilitas` varchar(255) NOT NULL,
   `jenis_ruangan` varchar(35) NOT NULL,
-  `kapasitas` int(4) NOT NULL
+  `kapasitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
