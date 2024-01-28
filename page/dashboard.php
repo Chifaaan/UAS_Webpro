@@ -70,7 +70,7 @@
               🏛️ Daftar Ruangan
             </li>
           </a>
-          <a href="../index.php">
+          <a href="../util/logout.php">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
               📴 Logout
             </li>
