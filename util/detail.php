@@ -12,7 +12,6 @@
   $resultRuangan = mysqli_query($conn, $queryRuangan);
   $resultJadwal = mysqli_query($conn, $queryJadwal);
   $rowRuangan = $resultRuangan->fetch_assoc();
-  $rowJadwal = $resultJadwal->fetch_assoc();
   $conn->close();
 ?>
 
