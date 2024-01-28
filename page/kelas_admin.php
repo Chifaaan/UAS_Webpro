@@ -76,7 +76,7 @@ $conn->close();
               ➕ 📅 Tambah Pemakaian Ruang
             </li>
           </a>
-          <a href="tambah_jadwal_kelas.html">
+          <a href="tambah_jadwal_kelas.php">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
               ➕ 📅 Tambah Jadwal kelas
             </li>
