@@ -2,7 +2,7 @@
 include("connection.php");
 if (isset($_POST['tambah_button'])) {
   try {
-    $id_ruangan = $_POST['id_ruangan'];
+    $id_ruangan = $_POST['id_ruangan']; 
     $hari = $_POST['hari'];
     $tanggal = $_POST['tanggal'];
     $waktu_mulai = $_POST['waktu_mulai'];
@@ -13,7 +13,8 @@ if (isset($_POST['tambah_button'])) {
     $status = $_POST['status'];
 
     // Update the database
-    $sql = "insert into jadwal (id_ruangan, id_matkul, NIP, hari, tanggal, waktu_mulai, waktu_selesai, keterangan, status) VALUES ('$id_ruangan', '$id_matkul', '$NIP', '$hari', '$tanggal', '$waktu_mulai', '$waktu_selesai', '$keterangan', '$status')";
+    $sql = "insert into jadwal (id_ruangan, id_matkul, NIP, hari, tanggal, waktu_mulai, waktu_selesai, keterangan, status) 
+    VALUES ('$id_ruangan', '$id_matkul', '$NIP', '$hari', '$tanggal', '$waktu_mulai', '$waktu_selesai', '$keterangan', '$status')";
     mysqli_query($conn, $sql);
 
     // Close the database connection

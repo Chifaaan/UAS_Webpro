@@ -58,22 +58,12 @@ $conn->close();
         <ul class="indent-7 text-sky-600 leading-9 p-2 mx-auto">
           <a href="kelas_admin.html">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
-              🏛️ fasilitas kelas
-            </li>
-          </a>
-          <a href="ruangan_admin.html">
-            <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
-              🏫 fasilitas ruangan
+            🏦 Dashboard Jadwal
             </li>
           </a>
           <a href="tambah.php">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
               ➕ Tambah Kelas
-            </li>
-          </a>
-          <a href="tambah_jadwal_ruang.html">
-            <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
-              ➕ 📅 Tambah Pemakaian Ruang
             </li>
           </a>
           <a href="tambah_jadwal_kelas.php">
