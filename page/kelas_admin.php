@@ -81,7 +81,7 @@ $conn->close();
               ➕ 📅 Tambah Jadwal kelas
             </li>
           </a>
-          <a href="login.html">
+          <a href="../util/logout.php">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
               📴 Logout
             </li>
@@ -114,7 +114,7 @@ $conn->close();
                     <td class="border-2 border-b-black p-2"><?= $row['jenis_ruangan']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $row['lokasi']; ?></td>
                     <td class="p-4 border-2 border-b-black p-2">
-                      <a href="../util/detailadmin.php?class=<?php echo $row['id_ruangan'] ?>" class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Edit</a>
+                      <a href="detailadmin.php?class=<?php echo $row['id_ruangan'] ?>" class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Edit</a>
                     </td>
                     </td>
                   </tr>
