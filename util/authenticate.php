@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
   } else {
     $_SESSION['userStatus'] = 'USER';
+    $_SESSION['userName'] = $username;
     header("Location: ../page/dashboard.php");
     exit();
   }

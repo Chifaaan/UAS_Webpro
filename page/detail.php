@@ -1,6 +1,6 @@
 <?php
   include ("connection.php");
-  $username = "Mahasiswa";
+  $username = $_SESSION['username'];
 
   $className = filter_var(isset($_GET['class']) ? $_GET['class'] : '', FILTER_SANITIZE_STRING);
   
