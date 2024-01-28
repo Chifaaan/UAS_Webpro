@@ -110,8 +110,8 @@ $conn->close();
                 <tr>
                   <td class="border-2 border-b-black p-2"><?= $rowJadwal['hari']; ?></td>
                   <td class="border-2 border-b-black p-2">
-                    <?php echo isset($rowJadwal['waktu_mulai']) ? $rowJadwal['waktu_mulai'] : ''; ?> -
-                    <?php echo isset($rowJadwal['waktu_selesai']) ? $rowJadwal['waktu_selesai'] : ''; ?>
+                    <?php echo isset($rowJadwal['waktu_mulai']) ? date('H:i', strtotime($rowJadwal['waktu_mulai'])) : ''; ?> -
+                    <?php echo isset($rowJadwal['waktu_selesai']) ? date('H:i', strtotime($rowJadwal['waktu_selesai'])) : ''; ?>
                   </td>
                   <td class="border-2 border-b-black p-2"><?= $rowJadwal['nama_dosen']; ?></td>
                   <td class="border-2 border-b-black p-2"><?= $rowJadwal['keterangan']; ?></td>

@@ -62,7 +62,7 @@ $conn->close();
     <div class="basis-4/4">
       <div class="px-4">
         <div class="rounded-md mb-2 shadow-slate-400 shadow-lg  h-max relative bg-white p-4">
-          <form action="../util/proses_update_jadwal.php?id_jadwal=<?php echo $id_jadwal?>" method="post">
+          <form action="../util/proses_update_jadwal.php?id_jadwal=<?php echo $id_jadwal ?>" method="post">
             <table class="w-full text-center">
               <tr>
                 <th class="border-2 border-b-black w-1/7 p-2">Nama Ruangan</th>
@@ -95,8 +95,8 @@ $conn->close();
               } ?>
 
             </table>
-            <button type="submit" name="tambah_button" class="mt-4 p-2 rounded bg-green-400 text-white ">⬆️ Update</button>
-            <a href="detail_jadwal.php?id_jadwal=<?php echo $id_jadwal?>" class="mt-4 p-2 rounded bg-yellow-500 text-white ">↻ Reset</a>
+            <button type="submit" name="update_button" class="mt-4 p-2 rounded bg-green-400 text-white ">⬆️ Update</button>
+            <a href="detail_jadwal.php?id_jadwal=<?php echo $id_jadwal ?>" class="mt-4 p-2 rounded bg-yellow-500 text-white ">↻ Reset</a>
             <a href="dashboard_admin.php" class="mt-4 p-2 rounded bg-red-400 text-white ">❌ Batal</a>
             <a href="dashboard_admin.php" class="mt-4 p-2 rounded bg-black text-white ">🗑️ Hapus</a>
           </form>
