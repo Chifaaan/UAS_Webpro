@@ -2,7 +2,10 @@
   include ("../util/connection.php");
   $username = "Mahasiswa";
 
-  $sql = "select * from jadwal";
+  $sql = "select jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
+  from jadwal
+  join dosen on jadwal.NIP = dosen.NIP
+  join mata_kuliah on jadwal.id_matkul = mata_kuliah.id_matkul;";
   $result = mysqli_query($conn, $sql);
   $conn->close();
 ?>
