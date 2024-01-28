@@ -1,8 +1,12 @@
 <?php
+session_start();
 include("../util/connection.php");
-$username = "admin";
+$username = $_SESSION['userName'];
 
-$sql = "select * from ruangan";
+$sql = "select jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
+  from jadwal
+  join dosen on jadwal.NIP = dosen.NIP
+  join mata_kuliah on jadwal.id_matkul = mata_kuliah.id_matkul;";
 $result = mysqli_query($conn, $sql);
 $conn->close();
 ?>
@@ -49,21 +53,22 @@ $conn->close();
               <path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0z" />
             </svg>
           </div>
-          <div>Dashboard Admin Data Kelas</div>
+          <div>Dashboard Admin</div>
         </div>
       </div>
     </div>
+
     <div class="flex flex-row p-4 mx-auto">
       <div class="basis-1/4 rounded-md transition-all duration-300 ease-in-out shadow-black shadow-sm bg-white">
         <ul class="indent-7 text-sky-600 leading-9 p-2 mx-auto">
-          <a href="dashboard_admin.php">
+          <a href="kelas_admin.php">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
-            🏦 Dashboard Jadwal
+              🏛️ Daftar Ruangan
             </li>
           </a>
-          <a href="tambah.php">
+          <a href="tambah_jadwal_kelas.php">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
-              ➕ Tambah Kelas
+              ➕ 📅 Tambah Jadwal kelas
             </li>
           </a>
           <a href="../util/logout.php">
@@ -73,10 +78,11 @@ $conn->close();
           </a>
         </ul>
       </div>
+
       <div class="basis-3/4">
         <div class="px-4">
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg  h-max relative bg-white p-4 text-center text-lg font-bold">
-            Fasilitas kelas Jurusan Teknik Informatika dan Komputer <br>
+            Jadwal Jurusan Teknik Informatika dan Komputer <br>
             <div class="text-sm font-normal">
               berikut ini adalah list kelas yang digunakan oleh mahasiswa TIK. klik tombol detil untuk informasi lebih lanjut
             </div>
@@ -85,33 +91,45 @@ $conn->close();
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
             <table class="w-full text-center">
               <tr>
-                <th class="border-2 border-b-black w-1/4 p-2">Kode ruangan</th>
-                <th class="border-2 border-b-black w-1/4 p-2">Jenis ruangan kelas</th>
-                <th class="border-2 border-b-black W-1/4 p-2">Lokasi</th>
-                <th class="border-2 border-b-black W-1/4 p-2">Aksi</th>
+                <th class="border-2 border-b-black w-1/8 p-2">Nama Ruangan</th>
+                <th class="border-2 border-b-black W-1/8 p-2">Hari</th>
+                <th class="border-2 border-b-black W-1/8 p-2">Waktu</th>
+                <th class="border-2 border-b-black w-2/8 p-2">Mata Kuliah</th>
+                <th class="border-2 border-b-black W-2/8 p-2">Nama Dosen</th>
+                <th class="border-2 border-b-black W-2/8 p-2">Aksi</th>
               </tr>
+
               <?php
               if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
               ?>
                   <tr>
                     <td class="border-2 border-b-black p-2"><?= $row['id_ruangan']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $row['jenis_ruangan']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $row['lokasi']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $row['hari']; ?></td>
+                    <td class="border-2 border-b-black p-2">
+                      <?php
+                      echo isset($row['waktu_mulai']) ? date('H:i', strtotime($row['waktu_mulai'])) : '';
+                      ?> -
+                      <?php
+                      echo isset($row['waktu_selesai']) ? date('H:i', strtotime($row['waktu_selesai'])) : '';
+                      ?>
+                    </td>
+                    <td class="border-2 border-b-black p-2"><?= $row['nama_matkul']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $row['nama_dosen']; ?></td>
                     <td class="p-4 border-2 border-b-black p-2">
-                      <a href="detailadmin.php?class=<?php echo $row['id_ruangan'] ?>" class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Edit</a>
+                      <a href="detail_jadwal.php?id_jadwal=<?php echo $row['id_jadwal'] ?>" class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Edit</a>
                     </td>
                   </tr>
               <?php }
               } ?>
+
             </table>
+
           </div>
         </div>
       </div>
     </div>
   </main>
-
-  <footer></footer>
 </body>
 
 </html>

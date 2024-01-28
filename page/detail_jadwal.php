@@ -1,11 +1,13 @@
 <?php
 include("../util/connection.php");
 $username = "admin";
+$id_jadwal = filter_var(isset($_GET['id_jadwal']) ? $_GET['id_jadwal'] : '', FILTER_SANITIZE_STRING);
 
-$sql = "select jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
-  from jadwal
-  join dosen on jadwal.NIP = dosen.NIP
-  join mata_kuliah on jadwal.id_matkul = mata_kuliah.id_matkul;";
+$sql = "SELECT jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
+        FROM jadwal
+        JOIN dosen ON jadwal.NIP = dosen.NIP
+        JOIN mata_kuliah ON jadwal.id_matkul = mata_kuliah.id_matkul
+        WHERE jadwal.id_jadwal = $id_jadwal";
 $result = mysqli_query($conn, $sql);
 $conn->close();
 ?>
@@ -60,7 +62,7 @@ $conn->close();
     <div class="basis-4/4">
       <div class="px-4">
         <div class="rounded-md mb-2 shadow-slate-400 shadow-lg  h-max relative bg-white p-4">
-          <form action="../util/proses_tambah_jadwal.php" method="post">
+          <form action="../util/proses_update_jadwal.php?id_jadwal=<?php echo $id_jadwal?>" method="post">
             <table class="w-full text-center">
               <tr>
                 <th class="border-2 border-b-black w-1/7 p-2">Nama Ruangan</th>
@@ -74,22 +76,29 @@ $conn->close();
                 <th class="border-2 border-b-black w-1/7 p-2">Status</th>
               </tr>
 
-
-              <tr>
-                <td class='border-2 border-b-black w-1/7 p-2'><input type='text' class='w-full text-center' name='id_ruangan' value=""></td>
-                <td class='border-2 border-b-black w-1/7 p-2'><input type='text' class='w-full text-center' name='hari' value=""></td>
-                <td class='border-2 border-b-black w-1/7 p-2'><input type='date' class='w-full text-center' name='tanggal' value=""></td>
-                <td class='border-2 border-b-black w-1/7 p-2'><input type='time' name='waktu_mulai' class='w-full text-center' value=""></td>
-                <td class='border-2 border-b-black w-1/7 p-2'><input type='time' name='waktu_selesai' class='w-full text-center' value=""></td>
-                <td class='border-2 border-b-black w-1/7 p-2'><input type='text' name='id_matkul' class='w-full text-center' value=""></td>
-                <td class='border-2 border-b-black w-1/7 p-2'><input type='text' name='NIP' class='w-full text-center' value=""></td>
-                <td class='border-2 border-b-black w-1/7 p-2'><input type='text' name='keterangan' class='w-full text-center' value=""></td>
-                <td class='border-2 border-b-black w-1/7 p-2'><input type='text' name='status' class='w-full text-center' value=""></td>
-              </tr>
+              <?php
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+              ?>
+                  <tr>
+                    <td class='border-2 border-b-black w-1/7 p-2'><input type='text' class='w-full text-center' name='id_ruangan' value="<?php echo $row['id_ruangan'] ?>"></td>
+                    <td class='border-2 border-b-black w-1/7 p-2'><input type='text' class='w-full text-center' name='hari' value="<?php echo $row['hari'] ?>"></td>
+                    <td class='border-2 border-b-black w-1/7 p-2'><input type='date' class='w-full text-center' name='tanggal' value="<?php echo $row['tanggal'] ?>"></td>
+                    <td class='border-2 border-b-black w-1/7 p-2'><input type='time' name='waktu_mulai' class='w-full text-center' value="<?php echo date('H:i', strtotime($row['waktu_mulai'])) ?>"></td>
+                    <td class='border-2 border-b-black w-1/7 p-2'><input type='time' name='waktu_selesai' class='w-full text-center' value="<?php echo date('H:i', strtotime($row['waktu_selesai'])) ?>"></td>
+                    <td class='border-2 border-b-black w-1/7 p-2'><input type='text' name='id_matkul' class='w-full text-center' value="<?php echo $row['id_matkul'] ?>"></td>
+                    <td class='border-2 border-b-black w-1/7 p-2'><input type='text' name='NIP' class='w-full text-center' value="<?php echo $row['NIP'] ?>"></td>
+                    <td class='border-2 border-b-black w-1/7 p-2'><input type='text' name='keterangan' class='w-full text-center' value="<?php echo $row['keterangan'] ?>"></td>
+                    <td class='border-2 border-b-black w-1/7 p-2'><input type='text' name='status' class='w-full text-center' value="<?php echo $row['status'] ?>"></td>
+                  </tr>
+              <?php }
+              } ?>
 
             </table>
-            <button type="submit" name="tambah_button" class="mt-4 p-2 rounded bg-green-400 text-white ">➕ Tambah </button>
-            <a href="tambah_jadwal_kelas.php" class="mt-4 p-2 rounded bg-red-400 text-white ">❌ Batal</a>
+            <button type="submit" name="tambah_button" class="mt-4 p-2 rounded bg-green-400 text-white ">⬆️ Update</button>
+            <a href="detail_jadwal.php?id_jadwal=<?php echo $id_jadwal?>" class="mt-4 p-2 rounded bg-yellow-500 text-white ">↻ Reset</a>
+            <a href="dashboard_admin.php" class="mt-4 p-2 rounded bg-red-400 text-white ">❌ Batal</a>
+            <a href="dashboard_admin.php" class="mt-4 p-2 rounded bg-black text-white ">🗑️ Hapus</a>
           </form>
         </div>
       </div>

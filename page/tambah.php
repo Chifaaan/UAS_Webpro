@@ -51,19 +51,6 @@
     </div>
     <div class="basis-4/4">
       <div class="px-4">
-        <div class="rounded-md mb-2  h-max relative bg-yellow-400 p-4 text-left text-lg font-bold ">
-          <a href="detil_admin.html"
-            class="text-black-200 bg-sky-100 active:bg-sky-100 pb-5 pt-4 px-9 mr-1 hover:underline  h-full ">✍️ Form Isi
-          </a>
-          <a href="kelas_admin.html"
-            class="text-black-200 bg-yellow-400 hover:bg-sky-100 pb-4 pt-4 px-9 mr-1 hover:underline hover:pb-5 transition-all h-full ">🏛️
-            Ruang Kelas </a>
-          <a href="Ruangan_admin.html"
-            class="text-black-200 bg-yellow-400 hover:bg-sky-100 pb-4 pt-4 px-9 mr-1 hover:underline hover:pb-5 transition-all h-full ">🏫
-            Fasilitas Ruangan </a>
-        </div>
-
-
         <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
           <form class="w-full text-center" action="../util/proses_tambah_ruangan.php" method="post">
             <table class="w-full text-center">
@@ -97,7 +84,7 @@
 
             <button type="submit" name="tambah_button" class="mt-4 p-2 rounded bg-green-400 text-white float-right">➕
               Tambah</button>
-            <a href="tambah.html" class="mt-4 p-2 rounded bg-red-400 text-white float-right mr-2">❌ Batal</a>
+            <a href="tambah.php" class="mt-4 p-2 rounded bg-red-400 text-white float-right mr-2">❌ Batal</a>
           </form>
         </div>
       </div>

@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-  if ($username === "admin") {
+  if (strcasecmp("admin", $username) === 0) {
     $_SESSION['userStatus'] = 'ADMIN';
     header("Location: ../page/kelas_admin.php");
     exit();

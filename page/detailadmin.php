@@ -3,9 +3,9 @@ include("../util/connection.php");
 $username = "Admin";
 
 $className = filter_var(isset($_GET['class']) ? $_GET['class'] : '', FILTER_SANITIZE_STRING);
-  
+
 $queryRuangan = "select * from ruangan where id_ruangan = '$className'";
-$queryJadwal ="select jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
+$queryJadwal = "select jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
 from jadwal
 join dosen on jadwal.NIP = dosen.NIP
 join mata_kuliah on jadwal.id_matkul = mata_kuliah.id_matkul where id_ruangan ='$className'";
@@ -64,7 +64,7 @@ $conn->close();
       <div class="px-4">
 
         <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
-          <form class="w-full text-center"  action=" ../util/proses_update_ruangan.php" method="post">
+          <form class="w-full text-center" action=" ../util/proses_update_ruangan.php?id_ruangan=<?php echo $className ?>" method="post">
             <table class="w-full">
               <tr>
                 <th class="border-2 border-b-black w-1/4 p-2">Data</th>
@@ -72,59 +72,56 @@ $conn->close();
               </tr>
 
               <tr>
-              <td class="border-2  p-2 text-center">kapasitas</td>
-              <td class="border-2  p-2 "><input type="text" class="" name="kapasitas" value='<?php echo $rowRuangan["kapasitas"]?>'></td>
-            </tr>
-            <tr>
-              <td class="border-2  p-2 text-center">jenis Ruangan</td>
-              <td class="border-2  p-2"><input type="text" class="w-max" name="jenis_ruangan" value='<?php echo $rowRuangan["jenis_ruangan"]?>'></td>
-            </tr>
-            <tr>
-              <td class="border-2  p-2 text-center">lokasi Ruangan</td>
-              <td class="border-2  p-2"><input type="text" class="w-max" name="lokasi" value='<?php echo $rowRuangan["lokasi"]?>'></td>
-            </tr>
-            <tr>
-              <td class="border-2  p-2 text-center">Fasilitas Penunjang</td>
-              <td class="border-2  p-2"><input type="text" class="w-max" name="fasilitas" value='<?php echo $rowRuangan["fasilitas"]?>'></td>
-            </tr>
+                <td class="border-2  p-2 text-center">kapasitas</td>
+                <td class="border-2  p-2 "><input type="text" class="" name="kapasitas" value='<?php echo $rowRuangan["kapasitas"] ?>'></td>
+              </tr>
+              <tr>
+                <td class="border-2  p-2 text-center">jenis Ruangan</td>
+                <td class="border-2  p-2"><input type="text" class="w-max" name="jenis_ruangan" value='<?php echo $rowRuangan["jenis_ruangan"] ?>'></td>
+              </tr>
+              <tr>
+                <td class="border-2  p-2 text-center">lokasi Ruangan</td>
+                <td class="border-2  p-2"><input type="text" class="w-max" name="lokasi" value='<?php echo $rowRuangan["lokasi"] ?>'></td>
+              </tr>
+              <tr>
+                <td class="border-2  p-2 text-center">Fasilitas Penunjang</td>
+                <td class="border-2  p-2"><input type="text" class="w-max" name="fasilitas" value='<?php echo $rowRuangan["fasilitas"] ?>'></td>
+              </tr>
             </table>
-
             <button type="submit" name="update_button" class="mt-4 p-2 rounded bg-sky-400 text-white float-right">⬆️ Update</button>
+            <a href="kelas_admin.php" class="mt-4 p-2 rounded bg-red-400 text-white float-right mr-5">❌ Batal</a>
           </form>
         </div>
 
         <div class="rounded-md mb-2 shadow-slate-400 shadow-lg  h-max relative bg-white p-4">
-          <form action="proses_update_jadwal.php" method="post">
-            <table class="w-full text-center">
-              <tr>
+          <table class="w-full text-center">
+            <tr>
               <th class="border-2 border-b-black w-1/5 p-2">hari</th>
               <th class="border-2 border-b-black w-1/5 p-2">Waktu</th>
               <th class="border-2 border-b-black w-1/5 p-2">Nama Dosen</th>
               <th class="border-2 border-b-black w-1/5 p-2">Keterangan</th>
               <th class="border-2 border-b-black w-1/5 p-2">Status</th>
-              </tr>
+            </tr>
 
-              <?php
-              if ($resultJadwal->num_rows > 0) {
-                while ($rowJadwal = $resultJadwal->fetch_assoc()) {
-              ?>
-                  <tr>
-                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['hari']; ?></td>
-                    <td class="border-2 border-b-black p-2">
-                      <?php echo isset($rowJadwal['waktu_mulai']) ? $rowJadwal['waktu_mulai'] : ''; ?> -
-                      <?php echo isset($rowJadwal['waktu_selesai']) ? $rowJadwal['waktu_selesai'] : ''; ?>
-                    </td>
-                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['nama_dosen']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['keterangan']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['status']; ?></td>
+            <?php
+            if ($resultJadwal->num_rows > 0) {
+              while ($rowJadwal = $resultJadwal->fetch_assoc()) {
+            ?>
+                <tr>
+                  <td class="border-2 border-b-black p-2"><?= $rowJadwal['hari']; ?></td>
+                  <td class="border-2 border-b-black p-2">
+                    <?php echo isset($rowJadwal['waktu_mulai']) ? $rowJadwal['waktu_mulai'] : ''; ?> -
+                    <?php echo isset($rowJadwal['waktu_selesai']) ? $rowJadwal['waktu_selesai'] : ''; ?>
+                  </td>
+                  <td class="border-2 border-b-black p-2"><?= $rowJadwal['nama_dosen']; ?></td>
+                  <td class="border-2 border-b-black p-2"><?= $rowJadwal['keterangan']; ?></td>
+                  <td class="border-2 border-b-black p-2"><?= $rowJadwal['status']; ?></td>
 
-                    </td>
-                  </tr>
-              <?php }
-              } ?>
-            </table>
-            <button type="submit" class="mt-4 p-2 rounded bg-sky-400 text-white ">⬆️ Update</button>
-            <a href="kelas_admin.php" class="mt-4 p-2 rounded bg-red-400 text-white ">❌ Batal</a>
+                  </td>
+                </tr>
+            <?php }
+            } ?>
+          </table>
           </form>
         </div>
       </div>
