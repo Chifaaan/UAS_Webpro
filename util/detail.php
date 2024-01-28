@@ -93,8 +93,7 @@
           <table class="w-full text-center">
             <tr>
               <th class="border-2 border-b-black w-1/5 p-2">hari</th>
-              <th class="border-2 border-b-black w-1/5 p-2">Waktu Mulai</th>
-              <th class="border-2 border-b-black w-1/5 p-2">Waktu Selesai</th>
+              <th class="border-2 border-b-black w-1/5 p-2">Waktu</th>
               <th class="border-2 border-b-black w-1/5 p-2">Nama Dosen</th>
               <th class="border-2 border-b-black w-1/5 p-2">Keterangan</th>
               <th class="border-2 border-b-black w-1/5 p-2">Status</th>
@@ -105,14 +104,14 @@
               ?>
                   <tr>
                     <td class="border-2 border-b-black p-2"><?= $rowJadwal['hari']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['waktu_mulai']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['waktu_selesai']; ?></td>
+                    <td class="border-2 border-b-black p-2">
+                      <?php echo isset($rowJadwal['waktu_mulai']) ? $rowJadwal['waktu_mulai'] : ''; ?> -
+                      <?php echo isset($rowJadwal['waktu_selesai']) ? $rowJadwal['waktu_selesai'] : ''; ?>
+                    </td>
                     <td class="border-2 border-b-black p-2"><?= $rowJadwal['nama_dosen']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $rowJadwal['keterangan']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $rowJadwal['status']; ?></td>
-                    <!-- <td class="p-4 border-2 border-b-black p-2">
-                      <a href="../util/detail.php?class=<?php echo $rowJadwal['id_ruangan'] ?>" class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
-                    </td> -->
+
                     </td>
                   </tr>
               <?php }
