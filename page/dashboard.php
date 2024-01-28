@@ -1,5 +1,10 @@
 <?php 
+  include ("../util/connection.php");
   $username = "Mahasiswa";
+
+  $sql = "select * from jadwal";
+  $result = mysqli_query($conn, $sql);
+  $conn->close();
 ?>
 
 <html>
@@ -74,7 +79,7 @@
         <div class="px-4">
           <div
             class="rounded-md mb-2 shadow-slate-400 shadow-lg  h-max relative bg-white p-4 text-center text-lg font-bold">
-            Fasilitas kelas Jurusan Teknik Informatika dan Komputer <br>
+            Jadwal Jurusan Teknik Informatika dan Komputer <br>
             <div class="text-sm font-normal">
               berikut ini adalah list kelas yang digunakan oleh mahasiswa TIK. klik tombol detil untuk informasi lebih lanjut
             </div>
@@ -82,33 +87,31 @@
 
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
             <table class="w-full text-center">
-              <!-- <tr>
-                <th class="border-2 border-b-black w-1/4 p-2">Kode ruangan</th>
-                <th class="border-2 border-b-black w-2/4 p-2">Nama ruangan</th>
-                <th class="border-2 border-b-black W-1/4 p-2">Lokasi</th>
+              <tr>
+                <th class="border-2 border-b-black w-1/4 p-2">Nama Ruangan</th>
+                <th class="border-2 border-b-black w-2/4 p-2">Mata Kuliah</th>
+                <th class="border-2 border-b-black W-1/4 p-2">Nama Dosen</th>
+                <th class="border-2 border-b-black W-1/4 p-2">Hari</th>
                 <th class="border-2 border-b-black W-1/4 p-2">Aksi</th>
               </tr>
 
-              <tr>
-                <td class="border-2 border-b-black p-2">GSG 202</td>
-                <td class="border-2 border-b-black p-2">Kelas Audio Visual</td>
-                <td class="border-2 border-b-black p-2">lantai 2, Gedung F (GSG)</td>
-                <td class="p-4 border-2 border-b-black p-2">
-                <a href="../util/detail.php?class=GSG202"
-                    class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
-                </td>
-                </td>
-              </tr>
+              <?php
+              if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+              ?>
+                  <tr>
+                    <td class="border-2 border-b-black p-2"><?= $row['id_ruangan']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $row['id_matkul']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $row['NIP']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $row['hari']; ?></td>
+                    <td class="p-4 border-2 border-b-black p-2">
+                      <a href="../util/detailadmin.php?class=<?php echo $row['id_ruangan'] ?>" class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
+                    </td>
+                    </td>
+                  </tr>
+              <?php }
+              } ?>
 
-              <tr>
-                <td class="border-2 border-b-black p-2">GSG 211</td>
-                <td class="border-2 border-b-black p-2">Kelas Reguler</td>
-                <td class="border-2 border-b-black p-2">lantai 2, Gedung F (GSG)</td>
-                <td class="p-4 border-2 border-b-black p-2">
-                  <a href="../util/detail.php?class=GSG211"
-                    class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
-                </td>
-              </tr> -->
             </table>
 
           </div>

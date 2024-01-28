@@ -9,7 +9,7 @@ if (isset($_POST['update_button'])) {
 
 
     // Update the database
-    $sql2 = "UPDATE ruangan SET kapasitas='$kapasitas', jenis_ruangan='$jenis_ruangan', lokasi='$lokasi', fasilitas='$fasilitas' WHERE id_ruangan=$className";
+    $sql2 = "update ruangan set kapasitas='$kapasitas', jenis_ruangan='$jenis_ruangan', lokasi='$lokasi', fasilitas='$fasilitas' WHERE id_ruangan=$className";
     mysqli_query($conn, $sql2);
 
     // Close the database connection

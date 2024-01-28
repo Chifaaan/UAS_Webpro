@@ -119,7 +119,7 @@
             <div
               class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4"
             >
-              <form  class="w-full text-center  action="proses_update_ruangan.php" method="post">
+              <form  class="w-full text-center  action="../util/proses_update_ruangan.php" method="post">
                 <table class="w-full text-center">
                   <tr>
                     <th class="border-2 border-b-black w-1/4 p-2">Informasi</th>
