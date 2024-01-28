@@ -93,8 +93,7 @@
               <tr>
                 <th class="border-2 border-b-black w-1/8 p-2">Nama Ruangan</th>
                 <th class="border-2 border-b-black W-1/8 p-2">Hari</th>
-                <th class="border-2 border-b-black W-1/8 p-2">Waktu Mulai</th>
-                <th class="border-2 border-b-black W-1/8 p-2">Waktu Selesai</th>
+                <th class="border-2 border-b-black W-1/8 p-2">Waktu</th>
                 <th class="border-2 border-b-black w-2/8 p-2">Mata Kuliah</th>
                 <th class="border-2 border-b-black W-2/8 p-2">Nama Dosen</th>
               </tr>
@@ -106,8 +105,10 @@
                   <tr>
                     <td class="border-2 border-b-black p-2"><?= $row['id_ruangan']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $row['hari']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $row['waktu_mulai']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $row['waktu_selesai']; ?></td>
+                    <td class="border-2 border-b-black p-2">
+                      <?php echo isset($row['waktu_mulai']) ? $row['waktu_mulai'] : ''; ?> -
+                      <?php echo isset($row['waktu_selesai']) ? $row['waktu_selesai'] : ''; ?>
+                    </td>
                     <td class="border-2 border-b-black p-2"><?= $row['nama_matkul']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $row['nama_dosen']; ?></td>
                     </td>
