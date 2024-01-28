@@ -39,16 +39,18 @@ CREATE TABLE `dosen` (
 --
 
 CREATE TABLE `jadwal` (
-  `id_ruangan` varchar(10) NOT NULL,
-  `id_matkul` varchar(6) NOT NULL,
-  `NIP` varchar(15) NOT NULL,
-  `hari` varchar(6) NOT NULL,
-  `tanggal` varchar(2) NOT NULL,
+  `id_jadwal` int(10) NOT NULL,
+  `id_ruangan` varchar(30) NOT NULL,
+  `id_matkul` varchar(20) NOT NULL,
+  `NIP` varchar(50) NOT NULL,
+  `hari` varchar(6) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL,
   `keterangan` varchar(255) NOT NULL,
-  `nama_peminjam` varchar(45) NOT NULL,
+  `waktu_mulai` time DEFAULT NULL,
+  `waktu_selesai` time DEFAULT NULL,
+  `nama_peminjam` varchar(45) DEFAULT NULL,
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 -- --------------------------------------------------------
 
 --
@@ -67,13 +69,12 @@ CREATE TABLE `mata_kuliah` (
 --
 
 CREATE TABLE `ruangan` (
-  `id_ruangan` varchar(10) NOT NULL,
+  `id_ruangan` varchar(25) NOT NULL,
   `lokasi` varchar(255) NOT NULL,
   `fasilitas` varchar(255) NOT NULL,
   `jenis_ruangan` varchar(35) NOT NULL,
   `kapasitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -83,6 +84,7 @@ CREATE TABLE `ruangan` (
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`NIP`);
+  
 
 --
 -- Indeks untuk tabel `jadwal`
