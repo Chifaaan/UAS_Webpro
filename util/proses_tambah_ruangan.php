@@ -1,6 +1,6 @@
 <?php
 include ("connection.php");
-if (isset($_POST['update_button'])) {
+if (isset($_POST['tambah_button'])) {
     $id_kelas = $_POST['id_kelas'];
     $kapasitas = $_POST['kapasitas'];
     $jenis_kelas = $_POST['jenis_kelas'];
