@@ -22,7 +22,7 @@ $conn->close();
   <header class="sticky bg-slate-100 py-5 font-bold shadow-blake shadow-2xl">
     <nav class="flex flex-row mx-auto w-9/12 px-2">
       <div class="basis-1/2 uppercase text-md items-center">
-        <a href="">
+        <a href="../page/kelas_admin.php">
           <span>Sistem Pengecekan Ruangan (SIPERANG) TIK</span> <br />
           <span>Politeknik Negeri Jakarta</span>
         </a>
