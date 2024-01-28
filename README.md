@@ -7,5 +7,6 @@ berasal dari kelompok 3 yang berisi :
 4. Muhammad Nur Irfan - 2207411056
 5. Rafii Anindito - 2207411058
 
+**Silahkan Run bagian index.php**
 Login menggunakan Username "admin" untuk masuk ke dalam page admin
 Login menggunakan Username "Mahasiswa" untuk masuk ke dalam page mahasiswa (user biasa)
