@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Jan 2024 pada 15.23
+-- Waktu pembuatan: 28 Jan 2024 pada 16.29
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -68,7 +68,16 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_ruangan`, `id_matkul`, `NIP`, `hari`, `ta
 (20, 'GSG210', '1310', '197802112009121003', 'Kamis', '2024-01-04', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (21, 'GSG211', '1701', '198411292020121002', 'Jumat', '2024-01-05', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (22, 'GSG211', '1702', '23072014090119801027', 'Jumat', '2024-01-05', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(23, 'GSG212', '1703', '199201302019032018', 'Jumat', '2024-01-05', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam');
+(23, 'GSG212', '1703', '199201302019032018', 'Jumat', '2024-01-05', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(24, 'GSG212', '2101', '198910112018032002', 'Jumat', '2024-01-05', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(25, 'GSG213', '2102', '199201302019032018', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(26, 'GSG213', '2102', '199303022019032022', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(27, 'GSG214', '2103', '198501292010121003', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(28, 'GSG214', '2104', '197605302008121002', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(29, 'AA202', '2101', '199007252020122012', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(30, 'AA202', '2102', '199303022019032022', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(31, 'AA203', '2103', '198502272015042001', 'Selasa', '2024-01-09', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(32, 'AA203', '1104', '199110042019032024', 'Selasa', '2024-01-09', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam');
 
 --
 -- Indexes for dumped tables
@@ -91,7 +100,7 @@ ALTER TABLE `jadwal`
 -- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
