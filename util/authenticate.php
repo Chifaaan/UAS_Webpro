@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST["password"];
 
   if ($username === "admin") {
-    header("Location: ../page/dashboard.php");
+    header("Location: ../page/kelas_admin.php");
     exit();
   } else {
     header("Location: ../page/dashboard.php");

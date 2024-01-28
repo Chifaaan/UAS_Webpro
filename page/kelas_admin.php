@@ -1,6 +1,6 @@
 <?php
 include("../util/connection.php");
-$username = "Mahasiswa";
+$username = "admin";
 
 $sql = "select * from ruangan";
 $result = mysqli_query($conn, $sql);
@@ -116,7 +116,7 @@ $conn->close();
             ➕ 📅 Tambah Jadwal kelas 
             </li></a
               >
-            <a href="login.php"
+            <a href="login.html"
               ><li
                 class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md"
               >
