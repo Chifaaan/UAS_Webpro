@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2024 at 07:50 PM
+-- Generation Time: Jan 28, 2024 at 07:59 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,57 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `sijafas`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `dosen`
---
-
-CREATE TABLE `dosen` (
-  `NIP` varchar(25) NOT NULL,
-  `nama_dosen` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `dosen`
---
-
-INSERT INTO `dosen` (`NIP`, `nama_dosen`) VALUES
-('195609231987031002', 'ABDUL AZIZ'),
-('195708101986031005', 'REFIRMAN'),
-('195808171986121001', 'AGUS SETIAWAN'),
-('195809201984031001', 'NUR FAUZI SOELAIMAN'),
-('196311131989032001', 'INDRI NEFORAWATI'),
-('197009152008121001', 'MASNADI'),
-('197011061998021001', 'YOYOK SABAR WALUYO'),
-('197509152003122003', 'MARIA AGUSTIN'),
-('197605302008121002', 'IWAN SONJAYA'),
-('197802032005012002', 'ERIYA'),
-('197802112009121003', 'MAULDY LAYA'),
-('197904282005012002', 'MERA KARTIKA DELIMAYANTI'),
-('197908032003122003', 'ANITA HIDAYATI'),
-('197910062003122001', 'PRIHATIN OKTIVASARI'),
-('198111162005012004', 'DEWI YANTI LILIANA'),
-('198112012015041001', 'DEFIANA ARNALDY'),
-('198410232014041001', 'HATA MAULANA'),
-('198410282019031005', 'ASEP TAUFIK MUHARRAM'),
-('198411292020121002', 'BAMBANG WARSUTA'),
-('198501292010121003', 'ARIAWAN ANDI SUHANDANA'),
-('198502272015042001', 'RISNA SARI'),
-('198606072019031011', 'ANGGI MARDIYONO'),
-('198703132019031012', 'INDRA HERMAWAN'),
-('198807122018032001', 'IKLIMA ERMIS ISMAIL'),
-('198910112018032002', 'AYU ROSYIDA ZAIN'),
-('199007252020122012', 'ADE RAHMA YULY'),
-('199109262019031012', 'ASEP KURNIAWAN'),
-('199110042019032024', 'MALISA HUZAIFA'),
-('199201302019032018', 'RIZKI ELISA NALAWATI'),
-('199303022019032022', 'NOORLELA MARCHETA'),
-('199308142019031015', 'MUHAMMAD YUSUF BAGUS RASYIIDIN'),
-('23072014090119801027', 'Euis Oktavianti'),
-('520000000000000228', 'Irawati'),
-('9202017012019840513', 'Fachroni Arbi Murad');
 
 -- --------------------------------------------------------
 
@@ -122,7 +71,6 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_ruangan`, `id_matkul`, `NIP`, `hari`, `ta
 (23, 'GSG212', '1703', '199201302019032018', 'Jumat', '2024-01-05', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (24, 'GSG212', '2101', '198910112018032002', 'Jumat', '2024-01-05', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (25, 'GSG213', '2102', '199201302019032018', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(26, 'GSG213', '2102', '199303022019032022', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (27, 'GSG202', '2103', '198501292010121003', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (28, 'GSG202', '2104', '197605302008121002', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (29, 'AA202', '2105', '199007252020122012', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
@@ -179,173 +127,15 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_ruangan`, `id_matkul`, `NIP`, `hari`, `ta
 (82, 'AA205', '4310', '197802032005012002', 'Kamis', '2024-02-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (83, 'AA301', '4501', '195609231987031002', 'Jumat', '2024-02-09', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (84, 'AA301', '4502', '195708101986031005', 'Jumat', '2024-02-09', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(89, 'AA302', '4503', '195808171986121001', 'Senin', '2024-02-12', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(90, 'AA302', '4504', '195809201984031001', 'Senin', '2024-02-12', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(85, 'AA302', '4503', '195808171986121001', 'Senin', '2024-02-12', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(86, 'AA302', '4504', '195809201984031001', 'Senin', '2024-02-12', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (91, 'AA303', '4505', '196311131989032001', 'Selasa', '2024-02-13', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (92, 'AA303', '4506', '197009152008121001', 'Selasa', '2024-02-13', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (93, 'AA303', '4507', '197011061998021001', 'Selasa', '2024-02-13', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `mata_kuliah`
---
-
-CREATE TABLE `mata_kuliah` (
-  `id_matkul` varchar(15) NOT NULL,
-  `nama_matkul` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `mata_kuliah`
---
-
-INSERT INTO `mata_kuliah` (`id_matkul`, `nama_matkul`) VALUES
-('1101', 'Algoritma & Pemrograman'),
-('1102', 'Pengantar Teknologi Informasi & Komunika'),
-('1103', 'Sistem Operasi'),
-('1104', 'Organisasi & Arsitektur Komputer'),
-('1105', 'Bahasa Indonesia'),
-('1106', 'Matematika Diskrit'),
-('1107', 'Teknologi Multimedia'),
-('1108', 'Pendidikan Agama'),
-('1109', 'Bahasa Inggris untuk TIK'),
-('1110', 'Pancasila'),
-('1301', 'Pemrograman Visual'),
-('1302', 'Manajemen Proyek Tik'),
-('1303', 'Desain Ui/Ux'),
-('1304', 'Kecerdasan Buatan'),
-('1305', 'Metode Numerik'),
-('1306', 'Pemrograman Web Lanjut'),
-('1307', 'Pemrograman Basis Data'),
-('1308', 'Analisis Dan Desain Sistem Informasi'),
-('1309', 'Grafika Komputer'),
-('1310', 'Sistem Terdistribusi'),
-('1501', 'Requirement Engineering'),
-('1502', 'Perencanaan Sistem'),
-('1503', 'Pemodelan Sistem'),
-('1504', 'Implementasi Sistem'),
-('1505', 'Etika Profesional'),
-('1506', 'Dokumentasi Sistem'),
-('1507', 'Komunikasi Profesional'),
-('1701', 'Kapita Selekta I'),
-('1702', 'Praktek Kerja Lapangan'),
-('1703', 'Seminar'),
-('2101', 'Teknologi Nirkabel'),
-('2102', 'Jaringan Komputer dan Komunikasi'),
-('2103', 'Sistem Operasi Jaringan'),
-('2104', 'Dasar Sistem Telekomunikasi'),
-('2105', 'Teknik Digital/Perangkat Komputer'),
-('2106', 'Pengantar Teknologi Informasi & Komunika'),
-('2107', 'Bahasa Indonesia(Pengembangan Karakter)'),
-('2108', 'Pendidikan Agama dalam TIK'),
-('3101', 'Matematika Diskrit'),
-('3102', 'Pengantar Teknologi Informasi dan Komuni'),
-('3103', 'Algoritma dan Pemrograman'),
-('3104', 'Bahasa Indonesia'),
-('3105', 'Bahasa Inggris untuk TIK 1'),
-('3106', 'Sistem operasi'),
-('3107', 'Kewarganegaraan'),
-('3108', 'Teknologi Multimedia'),
-('3109', 'Jaringan Komputer'),
-('3110', 'Piranti Komputer'),
-('3301', 'Metode Numerik'),
-('3302', 'English for IT Professional'),
-('3303', 'Rekayasa Perangkat Lunak'),
-('3304', 'Sistem Embedded'),
-('3305', 'Pemrograman Berorientasi Objek'),
-('3306', 'Infrastruktur Jaringan/ perutean dan pen'),
-('3307', 'Keamanan Komputer'),
-('3308', 'Pemrograman web ( Front, Back End )'),
-('3309', 'Organisasi & Arsitektur Komputer'),
-('3501', 'Analisis Permintaan Jaringan'),
-('3502', 'Perencanaan Jaringan'),
-('3503', 'Pemodelan Jaringan'),
-('3504', 'Implementasi Jaringan'),
-('3505', 'Etika Profesional'),
-('3506', 'Dokumentasi Jaringan'),
-('3507', 'Komunikasi Profesional'),
-('3701', 'Kapita Selekta I'),
-('3702', 'Praktek Kerja Lapangan'),
-('3703', 'Seminar'),
-('4101', 'Algoritma dan Pemrograman'),
-('4102', 'Matematika Diskrit'),
-('4103', 'Bahasa Inggris untuk TIK'),
-('4104', 'Pengantar TIK'),
-('4105', 'Pengantar Jaringan Komputer'),
-('4106', 'Pengantar Multimedia'),
-('4107', 'Pengantar Desain Komunikasi Visual'),
-('4108', 'Kewarganegaraan'),
-('4109', 'Bahasa Indonesia'),
-('4301', 'Pendidikan Agama'),
-('4302', 'Pancasila'),
-('4303', 'Perancangan dan Pengembangan Game'),
-('4304', 'Pemrograman Berbasis Object'),
-('4305', 'Pemodelan 3D'),
-('4306', 'Grafika Komputer'),
-('4307', 'Rekayasa Perangkat Lunak Multimedia'),
-('4308', 'Desain Web'),
-('4309', 'Hukum dan Etika'),
-('4310', 'Sistem Operasi'),
-('4501', 'Etika Profesi'),
-('4502', 'Komunikasi Profesional'),
-('4503', 'Pra Produksi'),
-('4504', 'Produksi'),
-('4505', 'Pasca Produksi'),
-('4506', 'Pengujian dan Evaluasi'),
-('4507', 'Dokumentasi Produk');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ruangan`
---
-
-CREATE TABLE `ruangan` (
-  `id_ruangan` varchar(10) NOT NULL,
-  `lokasi` varchar(255) NOT NULL,
-  `fasilitas` varchar(255) NOT NULL,
-  `jenis_ruangan` varchar(35) NOT NULL,
-  `kapasitas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `ruangan`
---
-
-INSERT INTO `ruangan` (`id_ruangan`, `lokasi`, `fasilitas`, `jenis_ruangan`, `kapasitas`) VALUES
-('AA202', 'lantai 2, gedung AA ', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('AA203', 'lantai 2, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('AA204', 'lantai 2, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('AA205', 'lantai 2, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('AA301', 'lantai 3, gedung AA', 'set-bangku meja dengan komputer 30 orang, papan tulis, proyektor dan AC', 'Laboratorium', 30),
-('AA302', 'lantai 3, gedung AA', 'set-bangku meja 30 orang, smart TV, papan tulis, dan AC', 'Teleconference ', 30),
-('AA303', 'lantai 3, gedung AA', 'set-bangku meja dengan komputer 30 orang, papan tulis, proyektor dan AC', 'Laboratorium', 30),
-('AA304', 'lantai 3, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('AA305', 'lantai 3, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('GSG201', 'lantai 2,Gedung F (GSG)', 'papan tulis, set-meja 12 orang dan AC', 'Ruang Meeting', 12),
-('GSG202', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, Smart TV, dan Sound Speaker', 'Kelas Reguler', 30),
-('GSG203', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, Smart TV, AC dan Sound Speaker', 'Kelas Reguler', 30),
-('GSG204', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('GSG205', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('GSG206', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('GSG207', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('GSG208', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('GSG209', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, Smart TV, AC dan Sound Speaker', 'Kelas Reguler', 30),
-('GSG210', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('GSG211', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('GSG212', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
-('GSG213', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30);
-
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `dosen`
---
-ALTER TABLE `dosen`
-  ADD PRIMARY KEY (`NIP`);
 
 --
 -- Indexes for table `jadwal`
@@ -355,18 +145,6 @@ ALTER TABLE `jadwal`
   ADD KEY `id_ruangan` (`id_ruangan`),
   ADD KEY `id_matkul` (`id_matkul`),
   ADD KEY `NIP` (`NIP`);
-
---
--- Indexes for table `mata_kuliah`
---
-ALTER TABLE `mata_kuliah`
-  ADD PRIMARY KEY (`id_matkul`);
-
---
--- Indexes for table `ruangan`
---
-ALTER TABLE `ruangan`
-  ADD PRIMARY KEY (`id_ruangan`);
 
 --
 -- AUTO_INCREMENT for dumped tables
