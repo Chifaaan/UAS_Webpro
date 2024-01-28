@@ -6,3 +6,6 @@ berasal dari kelompok 3 yang berisi :
 3. Chairania Jasmine Bambang - 2207411054
 4. Muhammad Nur Irfan - 2207411056
 5. Rafii Anindito - 2207411058
+
+Login menggunakan Username "admin" untuk masuk ke dalam page admin
+Login menggunakan Username "Mahasiswa" untuk masuk ke dalam page mahasiswa (user biasa)
