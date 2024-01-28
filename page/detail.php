@@ -67,8 +67,8 @@ session_start();
         <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
           <table class="w-full text-center">
             <tr>
-              <th class="border-2 border-b-black w-1/4 p-2">Informasi</th>
-              <th class="border-2 border-b-black w-2/4 p-2"></th>
+              <th class="border-2 border-b-black w-1/4 p-2">Data</th>
+              <th class="border-2 border-b-black w-2/4 p-2">Informasi</th>
             </tr>
             <tr>
               <td class="border-2  p-2">kapasitas</td>

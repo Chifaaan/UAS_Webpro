@@ -62,35 +62,30 @@ $conn->close();
     </div>
     <div class="basis-4/4">
       <div class="px-4">
-        <div class="rounded-md mb-2  h-max relative bg-yellow-400 p-4 text-left text-lg font-bold ">
-          <a href="detil_admin.html" class="text-black-200 bg-sky-100 active:bg-sky-100 pb-5 pt-4 px-9 mr-1 hover:underline  h-full ">🔍Detail </a>
-          <a href="kelas_admin.html" class="text-black-200 bg-yellow-400 hover:bg-sky-100 pb-4 pt-4 px-9 mr-1 hover:underline hover:pb-5 transition-all h-full ">🏛️ Ruang Kelas </a>
-        </div>
-
 
         <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
           <form class="w-full text-center"  action=" ../util/proses_update_ruangan.php" method="post">
-            <table class="w-full text-center">
+            <table class="w-full">
               <tr>
-                <th class="border-2 border-b-black w-1/4 p-2">Informasi</th>
-                <th class="border-2 border-b-black w-2/4 p-2"></th>
+                <th class="border-2 border-b-black w-1/4 p-2">Data</th>
+                <th class="border-2 border-b-black w-2/4 p-2">Informasi</th>
               </tr>
 
               <tr>
-              <td class="border-2  p-2">kapasitas</td>
-              <td class="border-2  p-2"><?php echo $rowRuangan["kapasitas"]?></td>
+              <td class="border-2  p-2 text-center">kapasitas</td>
+              <td class="border-2  p-2 "><input type="text" class="" name="kapasitas" value='<?php echo $rowRuangan["kapasitas"]?>'></td>
             </tr>
             <tr>
-              <td class="border-2  p-2">jenis Ruangan</td>
-              <td class="border-2  p-2"><?php echo $rowRuangan["jenis_ruangan"]?></td>
+              <td class="border-2  p-2 text-center">jenis Ruangan</td>
+              <td class="border-2  p-2"><input type="text" class="w-max" name="jenis_ruangan" value='<?php echo $rowRuangan["jenis_ruangan"]?>'></td>
             </tr>
             <tr>
-              <td class="border-2  p-2">lokasi Ruangan</td>
-              <td class="border-2  p-2"><?php echo $rowRuangan["lokasi"]?></td>
+              <td class="border-2  p-2 text-center">lokasi Ruangan</td>
+              <td class="border-2  p-2"><input type="text" class="w-max" name="lokasi" value='<?php echo $rowRuangan["lokasi"]?>'></td>
             </tr>
             <tr>
-              <td class="border-2  p-2">Fasilitas Penunjang</td>
-              <td class="border-2  p-2"><?php echo $rowRuangan["fasilitas"]?></td>
+              <td class="border-2  p-2 text-center">Fasilitas Penunjang</td>
+              <td class="border-2  p-2"><input type="text" class="w-max" name="fasilitas" value='<?php echo $rowRuangan["fasilitas"]?>'></td>
             </tr>
             </table>
 
