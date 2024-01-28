@@ -72,8 +72,8 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_ruangan`, `id_matkul`, `NIP`, `hari`, `ta
 (24, 'GSG212', '2101', '198910112018032002', 'Jumat', '2024-01-05', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (25, 'GSG213', '2102', '199201302019032018', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (26, 'GSG213', '2102', '199303022019032022', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(27, 'GSG214', '2103', '198501292010121003', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(28, 'GSG214', '2104', '197605302008121002', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(27, 'GSG202', '2103', '198501292010121003', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(28, 'GSG202', '2104', '197605302008121002', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (29, 'AA202', '2105', '199007252020122012', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (30, 'AA202', '2106', '199303022019032022', 'Senin', '2024-01-08', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (31, 'AA203', '2107', '198502272015042001', 'Selasa', '2024-01-09', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
@@ -96,17 +96,17 @@ INSERT INTO `jadwal` (`id_jadwal`, `id_ruangan`, `id_matkul`, `NIP`, `hari`, `ta
 (48, 'GSG201', '3306', '198112012015041001', 'Selasa', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
 (49, 'GSG202', '3307', '195809201984031001', 'Selasa', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
 (50, 'GSG202', '3308', '197910062003122001', 'Selasa', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
-(61, 'GSG203', '3309', '195809201984031001', 'Selasa', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(64, 'GSG303', '3501', '197011061998021001', 'Selasa', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(65, 'GSG204', '3502', '197802032005012002', 'Selasa', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
-(71, 'GSG204', '3503', '197509152003122003', 'Rabu', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(72, 'GSG205', '3504', '195808171986121001', 'Rabu', '2024-01-24', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
-(73, 'GSG205', '3505', '197904282005012002', 'Rabu', '2024-01-24', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(74, 'GSG206', '3506', '196311131989032001', 'Rabu', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(75, 'GSG206', '3507', '197009152008121001', 'Rabu', '2024-01-24', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
-(76, 'GSG207', '3701', '197509152003122003', 'Kamis', '2024-01-25', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
-(77, 'GSG207', '3702', '195809201984031001', 'Kamis', '2024-01-25', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
-(78, 'GSG207', '3703', '195609231987031002', 'Kamis', '2024-01-25', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Pembelajar');
+(51, 'GSG203', '3309', '195809201984031001', 'Selasa', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(52, 'GSG303', '3501', '197011061998021001', 'Selasa', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(53, 'GSG204', '3502', '197802032005012002', 'Selasa', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
+(54, 'GSG204', '3503', '197509152003122003', 'Rabu', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(55, 'GSG205', '3504', '195808171986121001', 'Rabu', '2024-01-24', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
+(56, 'GSG205', '3505', '197904282005012002', 'Rabu', '2024-01-24', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(57, 'GSG206', '3506', '196311131989032001', 'Rabu', '2024-01-23', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(58, 'GSG206', '3507', '197009152008121001', 'Rabu', '2024-01-24', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
+(59, 'GSG207', '3701', '197509152003122003', 'Kamis', '2024-01-25', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Dipinjam'),
+(60, 'GSG207', '3702', '195809201984031001', 'Kamis', '2024-01-25', 'Pembelajaran Reguler', NULL, NULL, NULL, 'DIpinjam'),
+(61, 'GSG207', '3703', '195609231987031002', 'Kamis', '2024-01-25', 'Pembelajaran Reguler', NULL, NULL, NULL, 'Pembelajar');
 
 --
 -- Indexes for dumped tables
@@ -129,7 +129,7 @@ ALTER TABLE `jadwal`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- Constraints for dumped tables
@@ -140,6 +140,7 @@ ALTER TABLE `jadwal`
 --
 ALTER TABLE `jadwal`
   ADD CONSTRAINT `jadwak_ibfk_1` FOREIGN KEY (`id_matkul`) REFERENCES `mata_kuliah` (`id_matkul`),
+  ADD CONSTRAINT `jadwak_ibfk_2` FOREIGN KEY (`id_ruangan`) REFERENCES `ruangan` (`id_ruangan`),
   ADD CONSTRAINT `jadwak_ibfk_3` FOREIGN KEY (`NIP`) REFERENCES `dosen` (`NIP`);
 COMMIT;
 
