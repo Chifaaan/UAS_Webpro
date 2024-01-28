@@ -1,6 +1,6 @@
 <?php
-include("connection.php");
-$username = "Mahasiswa";
+include("../util/connection.php");
+$username = "Admin";
 
 $className = filter_var(isset($_GET['class']) ? $_GET['class'] : '', FILTER_SANITIZE_STRING);
 
@@ -55,34 +55,6 @@ $conn->close();
         </div>
       </div>
     </div>
-    <!-- <div class="flex flex-row p-4 mx-auto">
-        <div
-          class="basis-1/4 rounded-md transition-all duration-300 ease-in-out shadow-black shadow-sm bg-white"
-        >
-          <ul class="indent-7 text-sky-600 leading-9 p-2 mx-auto">
-            <a href=""
-              ><li
-                class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md"
-              >
-                🏛️ fasilitas kelas 
-              </li></a
-            >
-            <a href="ruangan.html"
-              ><li
-                class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md"
-              >
-                🏫 fasilitas ruangan 
-              </li></a
-            >
-            <a href="login.php"
-              ><li
-                class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md"
-              >
-                📴 Logout
-              </li></a
-            >
-          </ul>
-        </div> -->
     <div class="basis-4/4">
       <div class="px-4">
         <div class="rounded-md mb-2  h-max relative bg-yellow-400 p-4 text-left text-lg font-bold ">
@@ -141,7 +113,7 @@ $conn->close();
 
             </table>
             <button type="submit" class="mt-4 p-2 rounded bg-sky-400 text-white ">⬆️ Update</button>
-            <a href="detil_ruang_admin.html" class="mt-4 p-2 rounded bg-red-400 text-white ">❌ Batal</a>
+            <a href="kelas_admin.php" class="mt-4 p-2 rounded bg-red-400 text-white ">❌ Batal</a>
           </form>
         </div>
       </div>

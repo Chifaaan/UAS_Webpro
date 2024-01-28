@@ -1,6 +1,7 @@
 <?php 
+session_start();
   include ("../util/connection.php");
-  $username = $_SESSION['username'];
+  $username = $_SESSION['userName'];
 
   $sql = "select jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
   from jadwal
