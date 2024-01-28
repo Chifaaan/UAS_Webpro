@@ -91,11 +91,12 @@
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
             <table class="w-full text-center">
               <tr>
-                <th class="border-2 border-b-black w-1/4 p-2">Nama Ruangan</th>
-                <th class="border-2 border-b-black w-2/4 p-2">Mata Kuliah</th>
-                <th class="border-2 border-b-black W-1/4 p-2">Nama Dosen</th>
-                <th class="border-2 border-b-black W-1/4 p-2">Hari</th>
-                <th class="border-2 border-b-black W-1/4 p-2">Aksi</th>
+                <th class="border-2 border-b-black w-1/8 p-2">Nama Ruangan</th>
+                <th class="border-2 border-b-black W-1/8 p-2">Hari</th>
+                <th class="border-2 border-b-black W-1/8 p-2">Waktu Mulai</th>
+                <th class="border-2 border-b-black W-1/8 p-2">Waktu Selesai</th>
+                <th class="border-2 border-b-black w-2/8 p-2">Mata Kuliah</th>
+                <th class="border-2 border-b-black W-2/8 p-2">Nama Dosen</th>
               </tr>
 
               <?php
@@ -104,12 +105,11 @@
               ?>
                   <tr>
                     <td class="border-2 border-b-black p-2"><?= $row['id_ruangan']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $row['hari']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $row['waktu_mulai']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $row['waktu_selesai']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $row['nama_matkul']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $row['nama_dosen']; ?></td>
-                    <td class="border-2 border-b-black p-2"><?= $row['hari']; ?></td>
-                    <td class="p-4 border-2 border-b-black p-2">
-                      <a href="../util/detailadmin.php?class=<?php echo $row['id_ruangan'] ?>" class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
-                    </td>
                     </td>
                   </tr>
               <?php }

@@ -4,9 +4,15 @@
 
   $className = filter_var(isset($_GET['class']) ? $_GET['class'] : '', FILTER_SANITIZE_STRING);
   
-  $sql = "select * from ruangan where id_ruangan = '$className'";
-  $result = mysqli_query($conn, $sql);
-  $row = $result->fetch_assoc();
+  $queryRuangan = "select * from ruangan where id_ruangan = '$className'";
+  $queryJadwal ="select jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
+  from jadwal
+  join dosen on jadwal.NIP = dosen.NIP
+  join mata_kuliah on jadwal.id_matkul = mata_kuliah.id_matkul where id_ruangan ='$className'";
+  $resultRuangan = mysqli_query($conn, $queryRuangan);
+  $resultJadwal = mysqli_query($conn, $queryJadwal);
+  $rowRuangan = $resultRuangan->fetch_assoc();
+  $rowJadwal = $resultJadwal->fetch_assoc();
   $conn->close();
 ?>
 
@@ -23,7 +29,7 @@
   <header class="sticky bg-slate-100 py-5 font-bold shadow-blake shadow-2xl">
     <nav class="flex flex-row mx-auto w-9/12 px-2">
       <div class="basis-1/2 uppercase text-md items-center">
-        <a href="">
+        <a href="../page/dashboard.php">
           <span>Sistem Pengecekan Ruangan (SIPERANG) TIK</span> <br />
           <span>Politeknik Negeri Jakarta</span>
         </a>
@@ -66,19 +72,19 @@
             </tr>
             <tr>
               <td class="border-2  p-2">kapasitas</td>
-              <td class="border-2  p-2"><?php echo $row["kapasitas"]?></td>
+              <td class="border-2  p-2"><?php echo $rowRuangan["kapasitas"]?></td>
             </tr>
             <tr>
               <td class="border-2  p-2">jenis Ruangan</td>
-              <td class="border-2  p-2"><?php echo $row["jenis_ruangan"]?></td>
+              <td class="border-2  p-2"><?php echo $rowRuangan["jenis_ruangan"]?></td>
             </tr>
             <tr>
               <td class="border-2  p-2">lokasi Ruangan</td>
-              <td class="border-2  p-2"><?php echo $row["lokasi"]?></td>
+              <td class="border-2  p-2"><?php echo $rowRuangan["lokasi"]?></td>
             </tr>
             <tr>
               <td class="border-2  p-2">Fasilitas Penunjang</td>
-              <td class="border-2  p-2"><?php echo $row["fasilitas"]?></td>
+              <td class="border-2  p-2"><?php echo $rowRuangan["fasilitas"]?></td>
             </tr>
           </table>
         </div>
@@ -88,18 +94,30 @@
           <table class="w-full text-center">
             <tr>
               <th class="border-2 border-b-black w-1/5 p-2">hari</th>
-              <th class="border-2 border-b-black w-1/5 p-2">Durasi pemakaian</th>
-              <th class="border-2 border-b-black w-1/5 p-2">Nama Peminjam</th>
-              <th class="border-2 border-b-black w-1/5 p-2">Status</th>
+              <th class="border-2 border-b-black w-1/5 p-2">Waktu Mulai</th>
+              <th class="border-2 border-b-black w-1/5 p-2">Waktu Selesai</th>
+              <th class="border-2 border-b-black w-1/5 p-2">Nama Dosen</th>
               <th class="border-2 border-b-black w-1/5 p-2">Keterangan</th>
+              <th class="border-2 border-b-black w-1/5 p-2">Status</th>
             </tr>
-            <tr>
-              <th class="border-2  w-1/5 p-2">Senin</th>
-              <th class="border-2  w-1/5 p-2">15:00 - 17:00</th>
-              <th class="border-2  w-1/5 p-2">SPNJ</th>
-              <th class="border-2  w-1/5 p-2">Digunakan</th>
-              <th class="border-2  w-1/5 p-2">Untuk Pelatihan Lomba KMIPN</th>
-            </tr>
+            <?php
+              if ($resultJadwal->num_rows > 0) {
+                while ($rowJadwal = $resultJadwal->fetch_assoc()) {
+              ?>
+                  <tr>
+                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['hari']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['waktu_mulai']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['waktu_selesai']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['nama_dosen']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['keterangan']; ?></td>
+                    <td class="border-2 border-b-black p-2"><?= $rowJadwal['status']; ?></td>
+                    <!-- <td class="p-4 border-2 border-b-black p-2">
+                      <a href="../util/detail.php?class=<?php echo $rowJadwal['id_ruangan'] ?>" class="text-black-200 bg-sky-200 py-1 px-2 hover:bg-sky-300 rounded-md ">Detail</a>
+                    </td> -->
+                    </td>
+                  </tr>
+              <?php }
+              } ?>
           </table>
         </div>
       </div>
