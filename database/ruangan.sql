@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2024 at 06:33 PM
+-- Generation Time: Jan 28, 2024 at 04:21 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,6 +40,15 @@ CREATE TABLE `ruangan` (
 --
 
 INSERT INTO `ruangan` (`id_ruangan`, `lokasi`, `fasilitas`, `jenis_ruangan`, `kapasitas`) VALUES
+('AA202', 'lantai 2, gedung AA ', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
+('AA203', 'lantai 2, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
+('AA204', 'lantai 2, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
+('AA205', 'lantai 2, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
+('AA301', 'lantai 3, gedung AA', 'set-bangku meja dengan komputer 30 orang, papan tulis, proyektor dan AC', 'Laboratorium', 30),
+('AA302', 'lantai 3, gedung AA', 'set-bangku meja 30 orang, smart TV, papan tulis, dan AC', 'Teleconference ', 30),
+('AA303', 'lantai 3, gedung AA', 'set-bangku meja dengan komputer 30 orang, papan tulis, proyektor dan AC', 'Laboratorium', 30),
+('AA304', 'lantai 3, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
+('AA305', 'lantai 3, gedung AA', 'set-bangku meja 30 orang, papan tulis, proyektor dan AC', 'Kelas Reguler', 30),
 ('GSG201', 'lantai 2,Gedung F (GSG)', 'papan tulis, set-meja 12 orang dan AC', 'Ruang Meeting', 12),
 ('GSG202', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, Smart TV, dan Sound Speaker', 'Kelas Reguler', 30),
 ('GSG203', 'lantai 2,Gedung F (GSG)', 'set-bangku meja 30 orang, papan tulis, Smart TV, AC dan Sound Speaker', 'Kelas Reguler', 30),
