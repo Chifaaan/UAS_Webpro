@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (strcasecmp("admin", $username) === 0) {
     $_SESSION['userStatus'] = 'ADMIN';
-    header("Location: ../page/kelas_admin.php");
+    header("Location: ../page/dashboard_admin.php");
     exit();
   } else {
     $_SESSION['userStatus'] = 'USER';

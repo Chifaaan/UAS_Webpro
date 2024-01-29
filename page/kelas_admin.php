@@ -1,9 +1,44 @@
 <?php
+session_start();
 include("../util/connection.php");
-$username = "admin";
+$username = $_SESSION['userName'];
 
-$sql = "select * from ruangan";
-$result = mysqli_query($conn, $sql);
+$filter_query = "select * from ruangan WHERE 1";
+
+// Pagination settings
+$itemsPerPage = 5;
+
+// Fetch the total number of items
+$sqlCount = "select COUNT(*) as total FROM ruangan";
+$resultCount = mysqli_query($conn, $sqlCount);
+$rowCount = mysqli_fetch_assoc($resultCount);
+$totalItems = $rowCount['total'];
+$totalPages = ceil($totalItems / $itemsPerPage);
+
+$filter_nama = isset($_GET['nama']) ? $_GET['nama'] : '';
+$filter_jenis = isset($_GET['jenis']) ? $_GET['jenis'] : '';
+$filter_lokasi = isset($_GET['lokasi']) ? $_GET['lokasi'] : '';
+
+if ($filter_nama != '') {
+  $filter_query .= " AND id_ruangan LIKE '%$filter_nama%'";
+}
+
+if ($filter_jenis != '') {
+  $filter_query .= " AND jenis_ruangan LIKE '%$filter_jenis%'";
+}
+
+if ($filter_lokasi != '') {
+  $filter_query .= " AND lokasi LIKE '%$filter_lokasi%'";
+}
+
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$page = max(1, min($page, $totalPages));
+
+$offset = ($page - 1) * $itemsPerPage;
+
+$filter_query .= " LIMIT $itemsPerPage OFFSET $offset;";
+
+$result = mysqli_query($conn, $filter_query);
 $conn->close();
 ?>
 
@@ -14,6 +49,35 @@ $conn->close();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Sistem Pengecekan Ruangan (SIPERANG) TIK</title>
+  <style>
+    .pagination {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    .pagination li {
+      margin-right: 0.5rem;
+    }
+
+    .pagination-link {
+      display: inline-block;
+      padding: 0.5rem;
+      background-color: #e2e8f0;
+      color: #2d3748;
+      text-decoration: none;
+      border-radius: 0.25rem;
+      transition: background-color 0.3s;
+    }
+
+    .pagination-link:hover {
+      background-color: #cbd5e0;
+    }
+
+    .pagination-link.font-bold {
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body class="bg-sky-100">
@@ -58,7 +122,7 @@ $conn->close();
         <ul class="indent-7 text-sky-600 leading-9 p-2 mx-auto">
           <a href="dashboard_admin.php">
             <li class="hover:border-2 hover:border-sky-500 transition-all duration-100 ease-in-out rounded-md">
-            🏦 Dashboard Jadwal
+              🏦 Dashboard Jadwal
             </li>
           </a>
           <a href="tambah.php">
@@ -80,6 +144,21 @@ $conn->close();
             <div class="text-sm font-normal">
               berikut ini adalah list kelas yang digunakan oleh mahasiswa TIK. klik tombol detil untuk informasi lebih lanjut
             </div>
+          </div>
+
+          <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row justify-center h-max relative bg-white pt-2">
+            <form action="" method="get">
+              <label for="hari">Nama Ruangan:</label>
+              <input type="text" name="nama" value="<?= $filter_nama ?>" placeholder="Filter by Nama">
+
+              <label for="dosen">Jenis Ruangan:</label>
+              <input type="text" name="jenis" value="<?= $filter_jenis ?>" placeholder="Filter by Jenis">
+
+              <label for="ruangan">Lokasi:</label>
+              <input type="text" name="lokasi" value="<?= $filter_lokasi ?>" placeholder="Filter by Lokasi">
+
+              <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
+            </form>
           </div>
 
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
@@ -106,6 +185,19 @@ $conn->close();
               } ?>
             </table>
           </div>
+
+          <div class="flex justify-center rounded-md mb-2 shadow-slate-400 shadow-lg h-max relative bg-white p-2">
+            <ul class="pagination">
+              <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+                <li>
+                  <a href="?page=<?= $i ?>" class="pagination-link <?= $i === $page ? 'text-sky-500 font-bold' : '' ?>">
+                    <?= $i ?>
+                  </a>
+                </li>
+              <?php endfor; ?>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
