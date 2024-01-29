@@ -149,6 +149,7 @@ $conn->close();
               berikut ini adalah list kelas yang digunakan oleh mahasiswa TIK. klik tombol detil untuk informasi lebih lanjut
             </div>
           </div>
+
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row justify-center h-max relative bg-white pt-2">
             <form action="" method="get">
               <label for="hari">Hari:</label>
@@ -198,6 +199,7 @@ $conn->close();
 
             </table>
           </div>
+
           <div class="flex justify-center rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-2">
             <ul class="pagination">
               <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
@@ -209,6 +211,7 @@ $conn->close();
               <?php endfor; ?>
             </ul>
           </div>
+          
         </div>
       </div>
     </div>
