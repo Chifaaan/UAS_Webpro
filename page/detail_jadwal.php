@@ -98,7 +98,7 @@ $conn->close();
             <button type="submit" name="update_button" class="mt-4 p-2 rounded bg-green-400 text-white ">⬆️ Update</button>
             <a href="detail_jadwal.php?id_jadwal=<?php echo $id_jadwal ?>" class="mt-4 p-2 rounded bg-yellow-500 text-white ">↻ Reset</a>
             <a href="dashboard_admin.php" class="mt-4 p-2 rounded bg-red-400 text-white ">❌ Batal</a>
-            <a href="dashboard_admin.php" class="mt-4 p-2 rounded bg-black text-white ">🗑️ Hapus</a>
+            <a href="../util/proses_delete_jadwal.php?id_jadwal=<?php echo $id_jadwal ?>" class="mt-4 p-2 rounded bg-black text-white ">🗑️ Hapus</a>
           </form>
         </div>
       </div>

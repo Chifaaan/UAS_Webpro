@@ -89,7 +89,9 @@ $conn->close();
               </tr>
             </table>
             <button type="submit" name="update_button" class="mt-4 p-2 rounded bg-sky-400 text-white float-right">⬆️ Update</button>
+            <a href="detailadmin.php?class=<?php echo $className ?>" class="mt-4 p-2 rounded bg-yellow-500 text-white float-right mr-5">↻ Reset</a>
             <a href="kelas_admin.php" class="mt-4 p-2 rounded bg-red-400 text-white float-right mr-5">❌ Batal</a>
+            <a href="../util/proses_delete_ruangan.php?id_ruangan=<?php echo $className ?>" class="mt-4 p-2 rounded bg-black text-white float-right mr-5">🗑️ Hapus</a>
           </form>
         </div>
 
