@@ -4,7 +4,7 @@ include("../util/connection.php");
 $username = $_SESSION['userName'];
 
 // Pagination settings
-$itemsPerPage = 8;
+$itemsPerPage = 5;
 
 // Fetch the total number of items
 $sqlCount = "SELECT COUNT(*) as total FROM jadwal";
@@ -13,19 +13,40 @@ $rowCount = mysqli_fetch_assoc($resultCount);
 $totalItems = $rowCount['total'];
 $totalPages = ceil($totalItems / $itemsPerPage);
 
+// Filter variables
+$filter_hari = isset($_GET['hari']) ? $_GET['hari'] : '';
+$filter_dosen = isset($_GET['dosen']) ? $_GET['dosen'] : '';
+$filter_ruangan = isset($_GET['ruangan']) ? $_GET['ruangan'] : '';
+
+// Build the filter query
+$filter_query = "SELECT jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
+                FROM jadwal
+                JOIN dosen ON jadwal.NIP = dosen.NIP
+                JOIN mata_kuliah ON jadwal.id_matkul = mata_kuliah.id_matkul
+                WHERE 1";
+
+if ($filter_hari != '') {
+  $filter_query .= " AND jadwal.hari = '$filter_hari'";
+}
+
+if ($filter_dosen != '') {
+  $filter_query .= " AND dosen.nama_dosen LIKE '%$filter_dosen%'";
+}
+
+if ($filter_ruangan != '') {
+  $filter_query .= " AND jadwal.id_ruangan LIKE '%$filter_ruangan%'";
+}
+
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $page = max(1, min($page, $totalPages));
 
 $offset = ($page - 1) * $itemsPerPage;
 
-$sql = "SELECT jadwal.*, dosen.nama_dosen, mata_kuliah.nama_matkul
-  FROM jadwal
-  JOIN dosen ON jadwal.NIP = dosen.NIP
-  JOIN mata_kuliah ON jadwal.id_matkul = mata_kuliah.id_matkul LIMIT $itemsPerPage OFFSET $offset;";
-$result = mysqli_query($conn, $sql);
+$filter_query .= " LIMIT $itemsPerPage OFFSET $offset;";
+
+$result = mysqli_query($conn, $filter_query);
 $conn->close();
 ?>
-
 
 <html>
 
@@ -128,6 +149,20 @@ $conn->close();
               berikut ini adalah list kelas yang digunakan oleh mahasiswa TIK. klik tombol detil untuk informasi lebih lanjut
             </div>
           </div>
+          <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row justify-center h-max relative bg-white pt-2">
+            <form action="" method="get">
+              <label for="hari">Hari:</label>
+              <input type="text" name="hari" value="<?= $filter_hari ?>" placeholder="Filter by Hari">
+
+              <label for="dosen">Dosen:</label>
+              <input type="text" name="dosen" value="<?= $filter_dosen ?>" placeholder="Filter by Dosen">
+
+              <label for="ruangan">Ruangan:</label>
+              <input type="text" name="ruangan" value="<?= $filter_ruangan ?>" placeholder="Filter by Ruangan">
+
+              <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
+            </form>
+          </div>
 
           <div class="rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-4">
             <table class="w-full text-center">
@@ -147,8 +182,12 @@ $conn->close();
                     <td class="border-2 border-b-black p-2"><?= $row['id_ruangan']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $row['hari']; ?></td>
                     <td class="border-2 border-b-black p-2">
-                      <?php echo isset($row['waktu_mulai']) ? $row['waktu_mulai'] : ''; ?> -
-                      <?php echo isset($row['waktu_selesai']) ? $row['waktu_selesai'] : ''; ?>
+                      <?php
+                      echo isset($row['waktu_mulai']) ? date('H:i', strtotime($row['waktu_mulai'])) : '';
+                      ?> -
+                      <?php
+                      echo isset($row['waktu_selesai']) ? date('H:i', strtotime($row['waktu_selesai'])) : '';
+                      ?>
                     </td>
                     <td class="border-2 border-b-black p-2"><?= $row['nama_matkul']; ?></td>
                     <td class="border-2 border-b-black p-2"><?= $row['nama_dosen']; ?></td>
@@ -158,9 +197,8 @@ $conn->close();
               } ?>
 
             </table>
-            
           </div>
-          <div class="flex justify-center rounded-md shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-2">
+          <div class="flex justify-center rounded-md mb-2 shadow-slate-400 shadow-lg flex flex-row h-max relative bg-white p-2">
             <ul class="pagination">
               <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
                 <li>
